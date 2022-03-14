@@ -1,5 +1,5 @@
 application:
   discord:
-    secret-token: "OTUyOTY3MDgyNjc1NDA4OTc3.Yi9twQ.3fyhBlq2GbdxiMJ-iYovofehRIA"
+    secret-token: "<<Token here>>"
     msg: "Type !ping"
 #    msg: "Looking for Players!"
