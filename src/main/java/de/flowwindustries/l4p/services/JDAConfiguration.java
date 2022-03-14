@@ -20,7 +20,7 @@ import javax.security.auth.login.LoginException;
 @Configuration
 public class JDAConfiguration {
 
-    @Value("${application.discord.secret-token}")
+    @Value("${DISCORD_BOT_TOKEN}")
     private String token;
 
     @Value("${application.discord.msg}")
