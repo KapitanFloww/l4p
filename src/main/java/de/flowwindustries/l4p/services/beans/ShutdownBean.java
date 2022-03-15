@@ -1,4 +1,4 @@
-package de.flowwindustries.l4p.bean;
+package de.flowwindustries.l4p.services.beans;
 
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.JDA;

@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +27,9 @@ public class JDAConfiguration {
     @Value("${application.discord.msg}")
     private String msg;
 
+    @Autowired
+    private PingPongListener pingPongListener;
+
     /**
      * Initialize the discord bot.
      * @throws LoginException
@@ -36,7 +40,7 @@ public class JDAConfiguration {
         return JDABuilder.createLight(token, GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
                 .setActivity(Activity.playing(msg))
                 .setStatus(OnlineStatus.ONLINE)
-                .addEventListeners(new PingPongListener())
+                .addEventListeners(pingPongListener)
                 .build();
     }
 }

@@ -2,3 +2,11 @@ application:
   discord:
     msg: "Type !ping"
 #    msg: "Looking for Players!"
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
